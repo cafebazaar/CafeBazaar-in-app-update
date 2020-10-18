@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/default_margin_double">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:src="@drawable/bazaar_logo_with_text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin_triple"
+            android:fontFamily="@font/_iransans_medium"
+            android:textColor="@color/dark_text"
+            android:textSize="18sp"
+            tools:text="آپدیت کنیم" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin_triple"
+            android:fontFamily="@font/regular"
+            android:textColor="@color/dark_text"
+            android:textSize="18sp"
+            tools:text="آپدیت کنیم" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/update"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_button_height"
+            android:layout_marginStart="@dimen/default_margin_double"
+            android:layout_marginTop="@dimen/default_margin_triple"
+            android:layout_marginEnd="@dimen/default_margin_double"
+            android:background="@drawable/selector_button_flat"
+            android:gravity="center"
+            android:text="@string/update"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:fontFamily="@font/regular" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/reject"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_button_height"
+            android:layout_marginStart="@dimen/default_margin_double"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginEnd="@dimen/default_margin_double"
+            android:background="@drawable/selector_button_flat_transparent"
+            android:gravity="center"
+            android:text="@string/reject"
+            android:textColor="@color/bazaar_green"
+            android:textSize="18sp"
+            app:fontFamily="@font/regular" />
+
+    </LinearLayout>
+</FrameLayout>
