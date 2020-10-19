@@ -2,4 +2,8 @@
     package="com.farsitel.bazaar.inappupdate">
 
     <uses-permission android:name="com.farsitel.bazaar.permission.BAZAAR_IN_APP_UPDATE" />
+    <application>
+        <receiver android:name=".receiver.InAppUpdateReceiver" />
+
+    </application>
 </manifest>
