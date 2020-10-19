@@ -1,3 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.farsitel.bazaar.inappupdate">
+
+    <uses-permission android:name="com.farsitel.bazaar.permission.BAZAAR_IN_APP_UPDATE" />
 </manifest>
