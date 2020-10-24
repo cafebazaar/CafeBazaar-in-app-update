@@ -1,4 +1,4 @@
-package com.farsitel.bazaar.util
+package com.farsitel.bazaar.inappupdate.util
 
 import android.util.Log
 
