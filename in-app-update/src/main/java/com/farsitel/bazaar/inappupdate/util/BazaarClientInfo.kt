@@ -1,11 +1,10 @@
-package com.farsitel.bazaar.inappupdate
+package com.farsitel.bazaar.inappupdate.util
 
 import android.content.Context
+import com.farsitel.bazaar.inappupdate.BAZAAR_PACKAGE_NAME
 import com.farsitel.bazaar.inappupdate.security.Security.verifyBazaarIsInstalled
-import com.farsitel.bazaar.inappupdate.util.getPackageInfo
-import com.farsitel.bazaar.inappupdate.util.versionCodeSDKAware
 
-object BazaarClientProxy {
+internal object BazaarClientInfo {
 
     private const val BAZAAR_WITH_IN_APP_UPDATE_VERSION = 902200
 
