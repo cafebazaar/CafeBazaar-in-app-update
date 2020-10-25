@@ -7,13 +7,17 @@ import com.farsitel.bazaar.inappupdate.connection.ReceiverCallback
 
 internal class InAppUpdateReceiver : BroadcastReceiver() {
 
-    private var observer: ReceiverCallback? = null
-
-    fun setObserver(observer: ReceiverCallback) {
-        this.observer = observer
+    override fun onReceive(context: Context?, intent: Intent?) {
+        if (intent != null) {
+            observer?.onDataReceived(intent)
+        }
     }
 
-    override fun onReceive(context: Context?, intent: Intent?) {
-        observer?.onDataReceived(intent)
+    companion object {
+        private var observer: ReceiverCallback? = null
+
+        fun setObserver(observer: ReceiverCallback) {
+            this.observer = observer
+        }
     }
 }
