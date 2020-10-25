@@ -1,30 +1,45 @@
 package com.farsitel.bazaar.inappupdate.manager
 
 import android.app.Activity
+import android.content.Context
 import com.farsitel.bazaar.inappupdate.model.AppUpdateInfo
 import com.farsitel.bazaar.inappupdate.callback.InstallStateUpdatedListener
 import com.farsitel.bazaar.inappupdate.callback.task.Task
+import com.farsitel.bazaar.inappupdate.connection.ReceiverConnection
 import com.farsitel.bazaar.inappupdate.install.InstallState
 import com.farsitel.bazaar.inappupdate.model.UpdateType
 
-interface AppUpdateManager {
+abstract class AppUpdateManager {
 
-    fun registerListener(listener: InstallStateUpdatedListener)
-    fun registerListener(onStateChange: (InstallState) -> Unit)
-    fun unregisterListener()
-    fun getAppUpdateInfo(): Task<AppUpdateInfo>
-    fun startUpdateFlow(
+    private var installStateListener: InstallStateUpdatedListener? = null
+    private var stateChangeCallback: ((InstallState) -> Unit)? = null
+
+    abstract fun getAppUpdateInfo(): Task<AppUpdateInfo>
+    abstract fun startUpdateFlow(
         appUpdateInfo: AppUpdateInfo,
         updateType: UpdateType,
         activity: Activity
     )
 
-    fun startUpdateFlowForResult(
+    abstract fun startUpdateFlowForResult(
         appUpdateInfo: AppUpdateInfo,
         updateType: UpdateType,
         activity: Activity,
         requestCode: Int
     )
 
-    fun completeUpdate()
+    abstract fun completeUpdate()
+
+    fun registerListener(listener: InstallStateUpdatedListener) {
+        installStateListener = listener
+    }
+
+    fun registerListener(onStateChange: (InstallState) -> Unit) {
+        stateChangeCallback = onStateChange
+    }
+
+    fun unregisterListener() {
+        stateChangeCallback = null
+        installStateListener = null
+    }
 }
