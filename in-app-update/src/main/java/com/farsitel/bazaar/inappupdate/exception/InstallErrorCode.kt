@@ -1,37 +1,45 @@
 package com.farsitel.bazaar.inappupdate.exception
 
-enum class InstallErrorCode {
+enum class InstallErrorCode(val code: Int) {
 
     /** The API is not available on this device.  */
-    ERROR_API_NOT_AVAILABLE,
+    ERROR_API_NOT_AVAILABLE(-1),
 
     /** The install/update has not been (fully) downloaded yet.  */
-    ERROR_DOWNLOAD_NOT_PRESENT,
+    ERROR_DOWNLOAD_NOT_PRESENT(-2),
 
     /** The install is already in progress.  */
-    ERROR_INSTALL_IN_PROGRESS,
+    ERROR_INSTALL_IN_PROGRESS(-3),
 
     /**
      * The download/install is not allowed, due to the current device state (e.g.&nbsp;low battery, low
      * disk space, ...).
      */
-    ERROR_INSTALL_NOT_ALLOWED,
+    ERROR_INSTALL_NOT_ALLOWED(-4),
 
     /** The install is unavailable to this user or device.  */
-    ERROR_INSTALL_UNAVAILABLE,
+    ERROR_INSTALL_UNAVAILABLE(-5),
 
     /** An internal error happened in the Bazaar.  */
-    ERROR_INTERNAL_ERROR,
+    ERROR_INTERNAL_ERROR(-6),
 
     /** The request that was sent by the app is malformed.  */
-    ERROR_INVALID_REQUEST,
+    ERROR_INVALID_REQUEST(-7),
 
     /** Bazaar app is either not installed or not the official version.  */
-    ERROR_BAZAAR_NOT_FOUND,
+    ERROR_BAZAAR_NOT_FOUND(-8),
 
     /** An unknown error occurred.  */
-    ERROR_UNKNOWN,
+    ERROR_UNKNOWN(-9);
 
-    /** No error occurred.  */
-    NO_ERROR
+    companion object {
+        fun errorCodeToEnum(errorCode: Int): InstallErrorCode {
+            for (i in values().indices) {
+                if (values()[i].code == errorCode) {
+                    return values()[i]
+                }
+            }
+            return ERROR_UNKNOWN
+        }
+    }
 }
