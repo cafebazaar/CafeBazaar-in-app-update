@@ -6,9 +6,10 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="320dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:background="@drawable/bazaar_bg_dialog"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="@dimen/default_margin_double">
@@ -16,25 +17,34 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="36dp"
+            android:layout_marginTop="@dimen/default_margin_double"
             android:src="@drawable/bazaar_logo_with_text" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/updateDescriptionMain"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin_double"
             android:layout_marginTop="@dimen/default_margin_triple"
+            android:layout_marginEnd="@dimen/default_margin_double"
             android:fontFamily="@font/_iransans_medium"
+            android:gravity="center"
             android:textColor="@color/dark_text"
-            android:textSize="18sp"
+            android:textDirection="rtl"
+            android:textSize="16sp"
             tools:text="آپدیت کنیم" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/updateDescription"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin_double"
             android:layout_marginTop="@dimen/default_margin_triple"
-            android:fontFamily="@font/regular"
+            android:layout_marginEnd="@dimen/default_margin_double"
+            android:fontFamily="@font/_iransans_regular"
+            android:text="@string/flexible_update_description"
             android:textColor="@color/dark_text"
-            android:textSize="18sp"
-            tools:text="آپدیت کنیم" />
+            android:textSize="14sp" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/update"
@@ -47,7 +57,7 @@
             android:gravity="center"
             android:text="@string/update"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="14sp"
             app:fontFamily="@font/regular" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -61,7 +71,7 @@
             android:gravity="center"
             android:text="@string/reject"
             android:textColor="@color/bazaar_green"
-            android:textSize="18sp"
+            android:textSize="14sp"
             app:fontFamily="@font/regular" />
 
     </LinearLayout>

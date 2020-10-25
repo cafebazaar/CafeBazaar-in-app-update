@@ -4,6 +4,7 @@
     <dimen name="default_margin">8dp</dimen>
     <dimen name="default_margin_double">16dp</dimen>
     <dimen name="default_margin_triple">24dp</dimen>
+    <dimen name="default_margin_quadruple">32dp</dimen>
 
     <dimen name="default_button_height">48dp</dimen>
 </resources>

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="update">به‌روزرسانی</string>
-    <string name="reject">انصراف</string>
+    <string name="reject">فعلا نه</string>
+    <string name="flexible_update_description_main">%s رو میتونی آپدیت کنی!</string>
+    <string name="flexible_update_description">وقتی داری دانلود میکنی میتونی با اپ کار کنی!</string>
 </resources>

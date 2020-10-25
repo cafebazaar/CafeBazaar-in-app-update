@@ -3,6 +3,10 @@
 
     <uses-permission android:name="com.farsitel.bazaar.permission.BAZAAR_IN_APP_UPDATE" />
     <application>
+        <activity
+            android:name=".view.BazaarDialogWrapperActivity"
+            android:theme="@style/Theme.Transparent" />
+
         <receiver android:name=".receiver.InAppUpdateReceiver">
             <intent-filter>
                 <action android:name="com.farsitel.bazaar.updateInfoRes" />

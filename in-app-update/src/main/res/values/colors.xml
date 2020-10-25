@@ -3,4 +3,5 @@
     <color name="white">#FFF</color>
     <color name="dark_text">#8F000000</color>
     <color name="bazaar_green">#0EA960</color>
+    <color name="bazaar_gray_100">#F5F5F5</color>
 </resources>
