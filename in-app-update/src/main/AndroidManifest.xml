@@ -3,7 +3,11 @@
 
     <uses-permission android:name="com.farsitel.bazaar.permission.BAZAAR_IN_APP_UPDATE" />
     <application>
-        <receiver android:name=".receiver.InAppUpdateReceiver" />
+        <receiver android:name=".receiver.InAppUpdateReceiver">
+            <intent-filter>
+                <action android:name="com.farsitel.bazaar.updateInfoRes" />
+            </intent-filter>
+        </receiver>
 
     </application>
 </manifest>
